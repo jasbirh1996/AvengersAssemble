@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "AvengersAssemble"
 include ':app'
+include ':repository'

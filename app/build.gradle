@@ -1,6 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id ("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -29,9 +32,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
+    implementation(project(':repository'))
 
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
@@ -40,4 +48,29 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    //Hilt
+    implementation DI.INSTANCE.daggerHilt
+    kapt DI.INSTANCE.hiltCompiler
+    implementation DI.INSTANCE.fragmentktx
+    // livedata
+    implementation Kotlin.INSTANCE.livedata
+    implementation Kotlin.INSTANCE.viewmodel
+    implementation Kotlin.INSTANCE.runtimeKtx
+
+    // navigation
+    implementation Navigation.INSTANCE.navigation
+    implementation Navigation.INSTANCE.navigationUi
+    implementation Navigation.INSTANCE.navigationDynamicFeature
+    //Log
+    implementation Others.INSTANCE.timber
+
+
 }
+kapt {
+    correctErrorTypes true
+}
+
+
+
+
