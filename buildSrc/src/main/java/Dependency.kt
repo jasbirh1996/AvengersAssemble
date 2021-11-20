@@ -8,8 +8,10 @@ object DI{
 
     val daggerHilt by lazy { "com.google.dagger:hilt-android:${Versions.ANDROID_HILT}" }
     val hiltCompiler by lazy { "com.google.dagger:hilt-compiler:${Versions.HILT_COMPILER}" }
-    val fragmentktx by lazy { "androidx.fragment:fragment-ktx:${Versions.FRAGMENT_KTX}" }
     val hiltGradlePlugin by lazy { "com.google.dagger:hilt-android-gradle-plugin:${Versions.ANDROID_HILT}" }
+    val hiltNavigation by lazy { "androidx.hilt:hilt-navigation-fragment:${Versions.HILT_ANDROIDX}" }
+    val androidXHiltCompiler by lazy { "androidx.hilt:hilt-compiler:${Versions.HILT_ANDROIDX}" }
+    val fragmentktx by lazy { "androidx.fragment:fragment-ktx:${Versions.FRAGMENT_KTX}" }
 
 
 }
@@ -18,6 +20,7 @@ object Kotlin {
     val livedata by lazy { "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIVEDATA}" }
     val viewmodel by lazy { "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.VIEWMODEL}" }
     val runtimeKtx by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.RUNTIME_KTX}" }
+    val kotlinStdLib by lazy { "org.jetbrains.kotlin:kotlin-stdlib:${Versions.KOTLIN_VERSION}" }
 
 
 }
@@ -52,4 +55,9 @@ object Testing {
 
 object Others{
     val timber by lazy {"com.jakewharton.timber:timber:${Versions.timber}"}
+}
+
+object Paging{
+    val paging by lazy {"androidx.paging:paging-runtime:${Versions.paging}"}
+
 }

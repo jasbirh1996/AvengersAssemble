@@ -1,9 +1,7 @@
 package com.jasbir.repository.remote.service
 
 import com.jasbir.repository.remote.response.MarvelCharacters
-import com.jasbir.repository.remote.service.MarvelConstants.MARVEL_API_HASH
-import com.jasbir.repository.remote.service.MarvelConstants.MARVEL_API_PUBLIC_KEY
-import com.jasbir.repository.remote.service.MarvelConstants.MARVEL_API_TS
+
 import retrofit2.Response
 import retrofit2.http.*
 import java.sql.Timestamp
@@ -16,6 +14,8 @@ interface ApiInterface {
  @GET("characters?")
  suspend fun getCharacters(@Query("ts") timestamp: String,
                            @Query("apikey") apikey: String,
-                           @Query("hash") hash: String, ): Response<MarvelCharacters>
+                           @Query("hash") hash: String,
+                           @Query("limit") limit : Int,
+                           @Query("offset") offset: Int, ): Response<MarvelCharacters>
 
 }

@@ -12,4 +12,5 @@ sealed class NetworkHandler<T>(
 
     class Loading<T> : NetworkHandler<T>()
 
+
 }
